@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-on:input="changeGreeting"></input>
+		<p>{{ greeting }} - <a v-bind:href="link"> Google </a></p>
+		<p v-html="finishedLink"></p>
+		<div>
+			<button v-on:click="increase"> Click here </button>
+			<p> {{ counter }} </p>
+			<p> {{ result }} </p>
+			<p v-on:mousemove="updateCoordinates">
+				Coordinates: {{ x }} / {{ y }}
+					<!-- Event modifier: v-on:mousemove.stop-->
+				- <span v-on:mousemove.stop=""> DEAD SPOT </span>
+				<input type="text" v-on:keyup.enter.space="alertMe">
+			</p>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+Vuejs
+
+A instancia do Vuejs cria um template e renderiza e depois outpusts o template final
+
+
+directive:
+  v-once: redenriza apenas uma vez,
+    então se o valor for mudado, não vai sofrer nenhuma alteração
+
+Computed
+  - é executada somente quando o valor da função é alterado,
+  - usa cache
+  - Pode ser usado como se fosse uma propriedade do metodo 'data', ou seja, não precisa
+  colocar parenteses.
+  - Precisa sempre ter retorno
+  - Nao recebe parametro
+  - Roda de forma sincrona
+
+
+Methods:
+  é executada todo vez que a pagina é renderizada
+  Use a função 'method' toda vez que não quiser salvar o cache e a função precisar ser
+  recalculada.
+
+
+Watch:
+  - roda de forma assincrona
+  - Não tem retorno
