@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VueJS</title>
+  <script src="vue.js"></script>
+  <style type="text/css">
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <dir class="demo" @click="attachRed = !attachRed" :class="divClasses"></dir>
+    <dir class="demo" :class="{red: attachRed}"></dir>
+    <dir class="demo" :class="[color, {red: attachRed}]"></dir>
+    <dir class="demo" :style="{backgroundColor: color}"></dir>
+    <dir class="demo" :style="myStyle"></dir>
+    <dir class="demo" :style="[myStyle, {height: width + 'px'}]"></dir>
+    <hr>
+    <input type="text" v-model="color">
+    <input type="text" v-model="width">
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        attachRed: false,
+        color: 'green',
+        width: 100
+      },
+      computed: {
+        divClasses() {
+          return {
+            red: this.attachRed,
+            blue: !this.attachRed
+          };
+        },
+        myStyle() {
+          return {
+            backgroundColor: this.color,
+            width: this.width + 'px'
+          };
+        }
+      }
+    });
+  </script>
+</body>
+</html>
