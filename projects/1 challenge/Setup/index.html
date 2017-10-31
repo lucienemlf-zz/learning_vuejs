@@ -13,7 +13,7 @@
             <h1 class="text-center">YOU</h1>
             <div class="healthbar">
                 <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                    {{ you_life }}
                 </div>
             </div>
         </div>
@@ -21,22 +21,22 @@
             <h1 class="text-center">MONSTER</h1>
             <div class="healthbar">
                 <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                    {{ monster_life }}
                 </div>
             </div>
         </div>
     </section>
-    <section class="row controls">
+    <section v-if="new_game" class="row controls">
         <div class="small-12 columns">
-            <button id="start-game">START NEW GAME</button>
+            <button id="start-game" v-on:click="new_game = !new_game">START NEW GAME</button>
         </div>
     </section>
-    <section class="row controls">
+    <section v-else class="row controls">
         <div class="small-12 columns">
             <button id="attack">ATTACK</button>
             <button id="special-attack">SPECIAL ATTACK</button>
             <button id="heal">HEAL</button>
-            <button id="give-up">GIVE UP</button>
+            <button id="give-up" @click="new_game = !new_game">GIVE UP</button>
         </div>
     </section>
     <section class="row log">
@@ -49,5 +49,6 @@
         </div>
     </section>
 </div>
+<script src="app.js"></script>
 </body>
 </html>
