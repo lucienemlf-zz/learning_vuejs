@@ -29,8 +29,9 @@ new Vue({
       this.monster_life -= monster_value;
       this.you_life -= player_value;
 
-      this.attacks.push(`${this.monster_attack} ${monster_value}`);
-      this.attacks.push(`${this.player_attack} ${player_value}`);
+      // Unshift - add in the beginning
+      this.attacks.unshift({ isPlayer: false, message: `${this.monster_attack} ${player_value}`});
+      this.attacks.unshift({isPlayer: true, message: `${this.player_attack} ${monster_value}`});
       this.checkWin()
     },
 
@@ -53,7 +54,6 @@ new Vue({
         }else {
           message = 'You Win';
         }
-        alert(message);
         this.startGame();
       }
     },

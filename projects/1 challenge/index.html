@@ -43,11 +43,13 @@
             <button id="give-up" @click="new_game = !new_game; play('give-up')">GIVE UP</button>
         </div>
     </section>
-    <section class="row log">
+    <section class="row log" v-if="attacks.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li v-for="attack in attacks">
-                    {{ attack }}
+                <li
+                    v-for="attack in attacks"
+                    :class="{'player-turn': attack.isPlayer, 'monster-turn': !attack.isPlayer}">
+                    {{ attack.message }}
                 </li>
             </ul>
         </div>
