@@ -1,1 +1,8 @@
 Vue instance
+
+
+<script>
+  export default {
+
+  } -> exporta uma instancia do Vue
+</script>

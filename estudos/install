@@ -1,0 +1,5 @@
+npm install -g vue-cli
+vue init <template> <project-name>
+npm run build //production code
+npm run dev //run server in dev mode
+npm install //to install dependencies
