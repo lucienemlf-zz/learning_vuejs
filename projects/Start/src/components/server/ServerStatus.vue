@@ -1,25 +1,29 @@
 <template>
   <div>
-    <div class="col-xs-12 col-sm-6">
-        <ul class="list-group">
-            <li
-                class="list-group-item"
-                v-for="index in 5">
-                Server #{{ index }}
-            </li>
-        </ul>
-    </div>
+    Server #{{ server.id }}
+    <button
+      @click="detailsShow"
+      class="btn btn-info"> Show Details </button>
   </div>
 </template>
 
 <script>
-  export default {
+  import { serverBus } from '../../main';
 
+  export default {
+    props: {
+      server: {
+        type: Object,
+        required: true,
+      }
+    },
+    methods: {
+      detailsShow() {
+        serverBus.$emit('setCurrentServer', this.server);
+      }
+    }
   }
 </script>
 
 <style scoped>
-    div {
-        border: 1px solid red;
-    }
 </style>

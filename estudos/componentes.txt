@@ -1,0 +1,28 @@
+Props
+
+passar informação do componente pai para o filho
+
+props: {
+  name: {
+    type: String,
+    required: true,
+    default:  'Luci'
+  }
+}
+
+Eventos
+
+passar informação do componente filho para o pai
+this.$emit('eventName', 'data');
+
+<componente-pai @eventName="data = $event"></componente-pai>
+
+
+Callbacks
+
+Passar uma função via props do pai para o filho, alternativa ao evento
+
+Event bus
+
+Comunicação entre componentes filhos
+
