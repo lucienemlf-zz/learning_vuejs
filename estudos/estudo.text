@@ -36,3 +36,7 @@ Section 5 - VueJs Instance
 Nomeando componentes
 
 DOM não reconhece camelcase, o vue transforma o camelcase em dashed ex: ServerStatus -> server-status
+
+shortcut:
+v-bind: -> :
+v-on: -> @

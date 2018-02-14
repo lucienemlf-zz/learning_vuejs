@@ -26,3 +26,19 @@ Event bus
 
 Comunicação entre componentes filhos
 
+<slot></slot>
+  -> passa template para ser renderizado no filho
+  ex: <ComponentePai>
+        <p>Vai ser renderizado no filho</p>
+      </ComponentePai>
+
+
+Componente dinâmico:
+<keep-alive>
+  <component :is="componentName"> </component>
+</keep-alive>
+
+Life Cicly hooks
+
+ativated() - quando está sendo renderizado
+deativated() - quando não está sendo renderizado
