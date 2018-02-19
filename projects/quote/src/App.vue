@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Quote from './components/Quote.vue';
+import Quote from './components/quotes/Main.vue';
 
 export default {
   name: 'app',
